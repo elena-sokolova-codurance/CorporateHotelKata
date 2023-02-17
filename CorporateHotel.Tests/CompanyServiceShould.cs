@@ -37,4 +37,19 @@ public class CompanyServiceShould
         var expectedEmployee2 = new Employee(companyId, employee2Id);
         Assert.True(employee2.Equals(expectedEmployee2));
     }
+    
+    [Fact (DisplayName = "Delete employee")]
+    public void DeleteEmployee()
+    {
+        IRepository  repository = new EmployeesRepository();
+        var companyService = new CompanyService(repository);
+
+        var companyId = 1;
+        var employeeId = 1;
+        companyService.AddEmployee(companyId, employeeId);
+
+        companyService.DeleteEmployee(employeeId);
+        
+        Assert.Null(companyService.FindEmployee(employeeId));
+    }
 }

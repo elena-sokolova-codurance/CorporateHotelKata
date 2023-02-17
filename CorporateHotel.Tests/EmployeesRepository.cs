@@ -22,7 +22,11 @@ public class EmployeesRepository : IRepository
         }
 
         return null;
+    }
 
-
+    public void Delete(int employeeId)
+    {
+        var employee = Find(employeeId);
+        _employees.Remove(employee);
     }
 }

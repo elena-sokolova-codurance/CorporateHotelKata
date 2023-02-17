@@ -17,4 +17,9 @@ public class CompanyService
     {
         return _employeesRepository.Find(employeeId);
     }
+
+    public void DeleteEmployee(int employeeId)
+    {
+        _employeesRepository.Delete(employeeId);
+    }
 }
