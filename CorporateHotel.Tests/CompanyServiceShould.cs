@@ -38,6 +38,21 @@ public class CompanyServiceShould
         Assert.True(employee2.Equals(expectedEmployee2));
     }
     
+    [Fact (DisplayName = "Should get exception")]
+    public void NotDuplicatesEmployees()
+    {
+        IRepository  repository = new EmployeesRepository();
+        var companyService = new CompanyService(repository);
+
+        var companyId = 1;
+        var employee1Id = 1;
+        companyService.AddEmployee(companyId, employee1Id);
+
+        var caughtException = Assert.Throws<Exception>(() => companyService.AddEmployee(companyId, employee1Id));
+
+        Assert.Equal($"Employee is already existent", caughtException.Message);
+    }
+    
     [Fact (DisplayName = "Delete employee")]
     public void DeleteEmployee()
     {
@@ -52,4 +67,6 @@ public class CompanyServiceShould
         
         Assert.Null(companyService.FindEmployee(employeeId));
     }
+    
+    
 }
