@@ -1,6 +1,4 @@
-using CorporateHotel;
-
-namespace ClassLibrary.Tests;
+namespace CorporateHotel;
 
 public class EmployeesRepository : IRepository
 {
@@ -16,12 +14,7 @@ public class EmployeesRepository : IRepository
 
     public Employee? Find(int employeeId)
     {
-        foreach (var employee in _employees.Where(employee => employee.EmployeeId == employeeId))
-        {
-            return employee;
-        }
-
-        return null;
+        return _employees.FirstOrDefault(employee => employee.EmployeeId == employeeId);
     }
 
     public void Delete(int employeeId)

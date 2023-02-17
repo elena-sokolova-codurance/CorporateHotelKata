@@ -1,6 +1,4 @@
-using CorporateHotel;
-
-namespace ClassLibrary.Tests;
+namespace CorporateHotel.Tests;
 
 public class CompanyServiceShould
 {
@@ -38,7 +36,7 @@ public class CompanyServiceShould
         Assert.True(employee2.Equals(expectedEmployee2));
     }
     
-    [Fact (DisplayName = "Should get exception")]
+    [Fact (DisplayName = "Should get exception if already have the same employee")]
     public void NotDuplicatesEmployees()
     {
         IRepository  repository = new EmployeesRepository();

@@ -7,7 +7,7 @@
 
         <IsPackable>false</IsPackable>
 
-        <RootNamespace>ClassLibrary.Tests</RootNamespace>
+        <RootNamespace>CorporateHotel.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

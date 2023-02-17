@@ -2,18 +2,18 @@ namespace CorporateHotel;
 
 public class Employee
 {
-    public int CompanyId;
-    public int EmployeeId;
+    private readonly int _companyId;
+    public readonly int EmployeeId;
 
     public Employee(int companyId,int employeeId)
     {
-        CompanyId = companyId;
+        _companyId = companyId;
         EmployeeId = employeeId;
     }
 
     public bool Equals(Employee employee)
     {
-        return (EmployeeId == employee.EmployeeId && CompanyId == employee.CompanyId);
+        return (EmployeeId == employee.EmployeeId && _companyId == employee._companyId);
     }
     
 }
