@@ -9,17 +9,13 @@ public class EmployeesRepository : IRepository
     {
         if (Find(employeeId) != null)
         {
-            throw new Exception("Employee is already existent");
+            throw new Exception("Employee is already exist");
         }
         _employees.Add(new Employee(companyId, employeeId));
     }
 
     public Employee? Find(int employeeId)
     {
-        if (_employees.Count == 0)
-            return null;
-
-
         foreach (var employee in _employees.Where(employee => employee.EmployeeId == employeeId))
         {
             return employee;
