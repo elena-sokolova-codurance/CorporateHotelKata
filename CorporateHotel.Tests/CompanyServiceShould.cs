@@ -50,7 +50,7 @@ public class CompanyServiceShould
 
         var caughtException = Assert.Throws<Exception>(() => companyService.AddEmployee(companyId, employee1Id));
 
-        Assert.Equal($"Employee is already existent", caughtException.Message);
+        Assert.Equal($"Employee is already exist", caughtException.Message);
     }
     
     [Fact (DisplayName = "Delete employee")]
